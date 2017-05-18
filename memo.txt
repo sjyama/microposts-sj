@@ -1,0 +1,11 @@
+
+--WKスペース内でプロジェクトを作成。
+$ cd ~/workspace/
+$ rails new microposts --database=mysql --skip-test
+
+--Git のバージョン管理開始。
+$ git init
+$ git add .
+
+$ git commit -m 'init'
+
