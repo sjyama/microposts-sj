@@ -15,7 +15,7 @@ $ rails db:create
 $ rails s -b $IP -p $PORT
 
 
---初期設定
+----初期設定
 --ジェネレータの設定
 --config/initializers/generators.rb を手動で作成。
 Rails.application.config.generators do |g|
@@ -25,7 +25,6 @@ Rails.application.config.generators do |g|
   g.skip_routes true
 end
 
-
 --ページネーション
 --以下をGemfileに追記
 gem 'kaminari'
@@ -33,7 +32,7 @@ gem 'kaminari'
 $ bundle install
 $ rails g kaminari:views bootstrap3
 
---
+----
 
 
 
