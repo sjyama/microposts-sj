@@ -6,6 +6,50 @@ $ rails new microposts --database=mysql --skip-test
 --Git のバージョン管理開始。
 $ git init
 $ git add .
-
 $ git commit -m 'init'
+
+--データベースの作成
+$ rails db:create
+
+--サーバを起動して動作確認（topのみ）
+$ rails s -b $IP -p $PORT
+
+
+--初期設定
+--ジェネレータの設定
+--config/initializers/generators.rb を手動で作成。
+Rails.application.config.generators do |g|
+  g.stylesheets false
+  g.javascripts false
+  g.helper false
+  g.skip_routes true
+end
+
+
+--ページネーション
+--以下をGemfileに追記
+gem 'kaminari'
+--以下を実行。
+$ bundle install
+$ rails g kaminari:views bootstrap3
+
+--
+
+
+
+--
+
+
+
+--
+
+
+
+--
+
+
+
+--
+
+
 
