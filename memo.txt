@@ -10,6 +10,7 @@ $ git commit -m 'init'
 
 --データベースの作成
 $ rails db:create
+（mysql-ctl start しておくこと）
 
 --サーバを起動して動作確認（topのみ）
 $ rails s -b $IP -p $PORT
@@ -25,23 +26,55 @@ Rails.application.config.generators do |g|
   g.skip_routes true
 end
 
+
 --ページネーション
 --以下をGemfileに追記
 gem 'kaminari'
 --以下を実行。
 $ bundle install
 $ rails g kaminari:views bootstrap3
+//
 
-----
+----トップページ
+Model＞
+なし
+Router＞
+config/routes.rb
+Controller＞
+$ rails g controller toppages index
+View＞
+・共通レイアウト
+app/views/layouts/application.html.erb
+・フラッシュメッセージ
+app/views/layouts/_flash_messages.html.erb
+・エラーメッセージ
+app/views/layouts/_error_messages.html.erb
+・ナビバー
+app/views/layouts/_navbar.html.erb
+・トップページ
+app/views/toppages/index.html.erb
+//
 
 
+--ユーザ登録機能
+
+
+(err)
+rails console でユーザを作成
+2.3.0 :007 >   user.save
+   (0.3ms)  BEGIN
+  User Exists (0.2ms)  SELECT  1 AS one FROM `users` WHERE `users`.`email` = 'Taro@Techacademy.jp' LIMIT 1
+   (0.2ms)  ROLLBACK
+NoMethodError: undefined method `dawncase!' for "Taro@Techacademy.jp":String
+Did you mean?  downcase!
+               downcase
+        from app/models/user.rb:2:in `block in <class:User>'
+        from (irb):7
 
 --
 
-
-
---
-
+8. ログイン機能
+8.4 sessions#new
 
 
 --
