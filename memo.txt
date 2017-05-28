@@ -73,8 +73,7 @@ Did you mean?  downcase!
 
 --
 
-8. ログイン機能
-8.4 sessions#new
+9. 投稿機能
 
 
 --
