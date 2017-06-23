@@ -1,0 +1,21 @@
+
+  <ul class="media-list">
+    <% microposts.each do |mpost| %>
+      <li class="media">
+        <div class="media-left">
+
+        </div>
+        <div class="media-body">
+          <div>
+            <!-- name-->
+            [content] <%= mpost.content %>
+          </div>
+          <div>
+            <!-- お気に入りmicropost＆お気に入り（解除）ボタンを表示（現状エラーが発生するけど保留。） -->
+            <%= render 'favorites/favorite_button', micropost: @micropost %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate microposts %>
